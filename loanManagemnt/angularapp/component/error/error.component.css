@@ -1,0 +1,10 @@
+.error-message {
+    text-align: center;
+    margin-top: 50px;
+}
+.error-message h3 {
+    color: red;
+}
+.error-message p {
+    color: black;
+}

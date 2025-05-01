@@ -1,0 +1,53 @@
+
+<div class="container mt-5" class="bodycontainer">
+    <h2 class="text-center" >Loan Requests for Approval</h2>
+    <hr style="border-color: #D1D9FF;">
+  
+            <table class="table table-striped">
+                <thead>
+                    <tr class="table-primary">
+                        <th>S.No</th>
+                        <th>Username</th>
+                        <th>Loan Type</th>
+                        <th>Submission Date</th>
+                        <th>Institution</th>
+                        <th>Tution Fee</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>        
+                <tbody>
+                    <tr *ngFor="let loan of loansApplied; index as i">
+                        <td>{{ i + 1 }}</td>
+                        <td>{{ loan.user.username }}</td>
+                        <td>{{ loan.loan.loanType }}</td>
+                        <td>{{ loan.submissionDate }}</td>
+                        <td>{{ loan.institution }}</td>
+                        <td>{{ loan.tuitionFee }}</td>
+                        <td>{{ getStatusName(loan.loanStatus) }}</td>
+                        <td>
+                            <button class="btn btn-custom btn-spacing" (click)="showMore(loan)">Show More</button>
+                            <button class="btn btn-custom1 btn-spacing" (click)="approveLoan(loan.loanApplicationId, loan)"
+                                    [disabled]="loan.loanStatus === 1 || loan.loanStatus === -1">Approve</button>
+                            <button class="btn btn-custom2" (click)="rejectLoan(loan.loanApplicationId, loan)"
+                                    [disabled]="loan.loanStatus === 1 || loan.loanStatus === -1">Reject</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+           
+            <div *ngIf="loansApplied.length == 0" class="oops text-center">
+                Oops, no loan found!
+            </div>
+        </div>
+
+<div *ngIf="selectedLoan" class="modal">
+    <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h3 class="modal-title">Additional Details</h3>
+    <p><strong>Username:</strong> {{ selectedLoan.user.username }}</p>
+    <p><strong>Loan Type:</strong> {{ selectedLoan.loan.loanType }}</p>
+    <p><strong>Address:</strong> {{ selectedLoan.address }}</p>
+    <p><strong>Proof:</strong></p>
+    <img [src]="'../../../assets/image/'  +selectedLoan.file">
+    </div>

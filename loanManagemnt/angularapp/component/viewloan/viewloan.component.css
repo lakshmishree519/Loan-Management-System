@@ -1,0 +1,129 @@
+h1 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+hr {
+    border-color: #D1D9FF;
+    width: 80%;
+    margin: 10px auto;
+}
+
+.search-input {
+    border: 2px solid #5161CE;
+    color: #5161CE;
+    width: 100%;
+    height: 2.5rem;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loan-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.loan-card {
+    background: #ffffff;
+    border: 1px solid #D1D9FF;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 10px 14px 20px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.loan-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.loan-card-header {
+    background: linear-gradient(135deg, #5161CE, #737CCF);
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    text-align: center;
+}
+
+.loan-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.loan-card-body p {
+    font-size: 0.95rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn1, .btn2 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn1 {
+    background-color: #5161CE;
+    color: white;
+    border: none;
+}
+
+.btn1:hover {
+    background-color: #3b4db7;
+}
+
+.btn2 {
+    background-color: #737CCF;
+    color: white;
+    border: none;
+}
+
+.btn2:hover {
+    background-color: #5a62b7;
+}
+
+.oops {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.bodycontainer {
+    background: linear-gradient(135deg, #cad8f3, #315595);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    padding: 40px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 10px 14px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.shadow-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.4);
+}

@@ -1,0 +1,173 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #00246B, #CADCFC);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 30px;
+  }
+  
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+    color: rgb(241, 239, 239); 
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .navbar-brand strong {
+    color: rgb(242, 244, 242); 
+    margin-left: 10px; 
+  }
+  
+  .navbar-brand img {
+    height: 40px; 
+    width: auto;
+  }
+
+
+.admin-text {
+    color: rgb(28, 1, 1);
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 5px 10px;
+    margin-right: 15px;
+  }
+  
+  .nav-link {
+    color: black; 
+    font-size: 1em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-right: 20px;
+    position: relative;
+  }
+  
+  .nav-link:hover {
+    color: #FFFFFF;
+  }
+  
+  .nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: rgb(239, 245, 239);
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    transition: width 0.3s ease; 
+  }
+  
+  .nav-link:hover::after {
+    width: 100%; 
+  }
+  
+  .nav-link.active::after {
+    width: 100%;
+  }
+  
+  .dropdown-menu {
+    display: none; 
+    background-color: #f0f0f0; 
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    min-width: 200px; 
+    margin-top: 0; 
+    position: absolute;
+    z-index: 1000;
+  }
+  
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-item {
+    color: black;
+    font-size: 0.9em;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: block;
+    white-space: nowrap;
+  }
+  
+  .dropdown-item:hover {
+    color: black;
+    background-color: #CADCFC; 
+  }
+  
+  .nav-link[routerLink="/login"] {
+    background-color: #00246B; 
+    color: white; 
+    font-size: 1em;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .nav-link[routerLink="/login"]:hover {
+    background-color: #06286b; 
+  }
+  
+  .nav-link[routerLink="/login"]::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #06286b; 
+    transition: width 0.3s ease;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+  }
+  
+  .nav-link[routerLink="/login"]:hover::after {
+    width: 100%;
+  }
+  
+  .user-text {
+    border: 0.5px solid black;
+  }
+  
+  
+  .navbar .dropdown-toggle::after {
+    content: "";
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    border-top: .3em solid rgb(245, 249, 245); 
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+  }
+  
+  .navbar-nav {
+    list-style-type: none; 
+    padding-left: 0; 
+    margin: 0; 
+  }
+  
+  .nav-item user-text{
+    border-radius: 10%;
+  }
+
+  .highlight-box {
+    background-color: #6186c8;
+    color: #00246B;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .highlight-box:hover {
+    background-color: #CADCFC;
+    color: #00246B;
+  }

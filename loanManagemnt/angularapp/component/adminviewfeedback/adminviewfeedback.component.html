@@ -1,0 +1,50 @@
+<div class="container mt-5" class="bodycontainer">
+    <h2 class="text-center">Feedback Details</h2>
+    <hr style="border-color: #D1D9FF;">
+   
+  
+            <table class="table table-striped">
+                <thead>
+                    <tr class="table-primary">
+                        <th>S.No</th>
+                        <th>User Name</th>
+                        <th>Feedback</th>
+                        <th>Posted Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let fe of feed; index as i">
+                        <td>{{i + 1}}</td>
+                        <td>{{fe.user.username}}</td>
+                        <td>{{fe.feedbackText}}</td>
+                        <td>{{fe.date}}</td>
+                        <td><button class="btn btn-primary" (click)="show(fe.user.userId)">Show Profile</button></td>
+                    </tr>
+                </tbody>
+            </table>
+           
+            <div *ngIf="feed.length == 0" class="oops text-center">
+                Oops, no Feedback found!
+            </div>
+        </div>
+   
+ 
+ 
+<div *ngIf="showdet" class="modal fade show" style="display: block; background-color: rgba(0, 0, 0, 0.5);">
+    <div class="modal-dialog modal-dialog-centered mt-3">
+    <div class="modal-content">
+    <div class="modal-body">
+    <div class="d-flex justify-content-center">
+    <p>User Details</p>
+    </div>
+    <div class="d-flex justify-content-center">
+                    Email: {{user.email}}<br>
+                    Username: {{user.username}}<br>
+                    Mobile Number: {{user.mobileNumber}}<br>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+    <button type="button" class="btn btn-primary" (click)="close()">Cancel</button>
+    </div>
+    </div>
+    </div>

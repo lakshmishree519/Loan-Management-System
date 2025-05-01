@@ -1,0 +1,151 @@
+h2 { 
+  color: #ffffff; 
+  font-size: 2.5rem; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+} 
+
+hr { 
+  border-color: #D1D9FF; 
+} 
+
+.filtering input { 
+  border: 1px solid #5161CE; 
+  color: #5161CE; 
+  width: 100%; 
+  height: 1.5rem; 
+  font-size: 0.75rem; 
+  padding: 1rem; 
+  font-family: 'Roboto', sans-serif; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  margin: 0 auto; 
+} 
+
+.search-input { 
+  border: 2px solid #5161CE; 
+  color: #5161CE; 
+  width: 100%; 
+  height: 2.5rem; 
+  font-size: 1rem; 
+  padding: 0.5rem; 
+  border-radius: 8px; 
+  text-align: center; 
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2); 
+} 
+
+.table { 
+  width: 80%; 
+  margin-left: auto; 
+  margin-right: auto; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  border-collapse: collapse; 
+} 
+
+th { 
+  background-color: #5161CE; 
+  color: white; 
+} 
+
+td, th { 
+  border: 1px solid #D1D9FF; 
+  padding: 8px; 
+  text-align: center; 
+} 
+
+td { 
+  background-color: #D1D9FF; 
+} 
+
+tr:nth-child(even) { 
+  background-color: #E0EFFF; 
+} 
+
+.btn-custom { 
+  background-color: #737CCF; 
+  color: white; 
+}
+
+.btn-custom1 { 
+  background-color: #858dd4; 
+  color: white; 
+}
+
+.btn-custom2 { 
+  background-color: #999fd9; 
+  color: white; 
+}
+
+.btn-spacing { 
+  margin-right: 5px; 
+  margin-bottom: 5px; 
+} 
+
+.oops { 
+  color: #fff; 
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  margin-top: 20px; 
+} 
+
+.bodycontainer { 
+  background: linear-gradient(135deg, #cad8f3, #315595); 
+  font-family: Arial, sans-serif; 
+  margin: 0; 
+  padding: 1%; 
+  min-height: 100vh; 
+  color: var(--nord4); 
+  background-size: cover; 
+} 
+
+.table-shadow { 
+  box-shadow: 15px 20px 25px rgba(0, 0, 0, 0.2); 
+  border-collapse: collapse; 
+} 
+
+.modal { 
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.6); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+} 
+
+.modal-content { 
+  background-color: #E3F2FD; 
+  border: 2px solid #0D47A1; 
+  padding: 20px; 
+  border-radius: 8px; 
+  width: 80%; 
+  max-width: 400px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+} 
+
+.modal-title { 
+  color: #0D47A1; 
+} 
+
+.btn-primary { 
+  background-color: #0D47A1; 
+  border: none; 
+} 
+
+.btn-primary:hover { 
+  background-color: #083B8A; 
+} 
+
+.close { 
+  color: #0D47A1; 
+  font-size: 1.5rem; 
+  font-weight: bold; 
+  cursor: pointer; 
+  float: right; 
+} 
+
+.close:hover { 
+  color: #083B8A; 
+}

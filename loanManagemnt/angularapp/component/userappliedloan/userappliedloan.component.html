@@ -1,0 +1,60 @@
+<div class="bodycontainer">
+    <div class="container mt-4">
+        <h1 class="text-center display-4 mb-4">Applied Loans</h1>
+        <hr style="border-color: #D1D9FF;">
+        
+        <div class="row mb-3 justify-content-center">
+            <div class="col-md-8">
+                <div class="filtering text-center">
+                    <label for="searchData" class="form-label fw-bold text-white">Search Loan</label>
+                    <input type="text" id="searchData" class="form-control form-control-lg search-input" [(ngModel)]="searchData" name="searchData" (input)="filterAppliedLoan()" placeholder="Type here...">
+                </div>
+            </div>
+        </div>
+        
+        <table class="table table-striped table-shadow">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Loan Name</th>
+                    <th>Submission Date</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let appliedloan of appliedLoans; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{appliedloan.loan.loanType}}</td>
+                    <td>{{appliedloan.submissionDate}}</td>
+                    <td>{{getStatusName(appliedloan.loanStatus)}}</td>
+                    <td>
+                        <button class="btn {{ appliedloan.loanStatus !== 0 ? 'btn-secondary' : 'btn-primary' }}" [disabled]="appliedloan.loanStatus !== 0" (click)="confirmDelete(appliedloan.loanApplicationId)">
+                            Delete
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div *ngIf="appliedLoans.length == 0" class="oops text-center">
+            Oops, no loan found!
+        </div>
+    </div>
+
+    <div *ngIf="deleteconfirm" class="modal fade show" style="display: block; background-color: rgba(0, 0, 0, 0.5);">
+        <div class="modal-dialog modal-dialog-centered mt-3">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="d-flex justify-content-center">
+                        <p>Are you sure you want to delete?</p>
+                    </div>
+                    <div class="d-flex justify-content-center mt-3">
+                        <button type="button" class="bute btn btn-danger mr-4" (click)="onDelete()">Yes, Delete</button>
+                        <button type="button" class="bute btn btn-secondary ml-4" (click)="onCancel()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

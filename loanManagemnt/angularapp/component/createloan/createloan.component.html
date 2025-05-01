@@ -1,0 +1,81 @@
+<div class="backgroundd">
+  <div class="container">
+    <div class="register-container">
+      <div class="header">
+        <h2>Create New Loan</h2>
+      </div>
+      <form [formGroup]="loanForm" (ngSubmit)="addNewLoan()">
+        <div class="form-group">
+          <label for="loanType">Loan Type<span class="text-danger">*</span></label>
+          <input type="text" formControlName="loanType" name="loanType" id="loanType" class="form-control" placeholder="Loan Type">
+          <div *ngIf="loanType.touched && loanType.invalid" class="text-danger">
+            <span *ngIf="loanType.errors['required']">*Loan Type is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="description">Description<span class="text-danger">*</span></label>
+          <input type="text" formControlName="description" name="description" id="description" class="form-control" placeholder="Loan Description">
+          <div *ngIf="description.touched && description.invalid" class="text-danger">
+            <span *ngIf="description.errors['required']">*Description is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="interestRate">Interest Rate<span class="text-danger">*</span></label>
+          <input type="number" formControlName="interestRate" name="interestRate" id="interestRate" class="form-control" placeholder="Interest Rate">
+          <div *ngIf="interestRate.touched && interestRate.invalid" class="text-danger">
+            <span *ngIf="interestRate.errors['required']">*Interest Rate is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="maximumAmount">Maximum Amount<span class="text-danger">*</span></label>
+          <input type="number" formControlName="maximumAmount" name="maximumAmount" id="maximumAmount" class="form-control" placeholder="Maximum Amount">
+          <div *ngIf="maximumAmount.touched && maximumAmount.invalid" class="text-danger">
+            <span *ngIf="maximumAmount.errors['required']">*Maximum Amount is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="repaymentTenure">Repayment Tenure<span class="text-danger">*</span></label>
+          <input type="number" formControlName="repaymentTenure" name="repaymentTenure" id="repaymentTenure" class="form-control" placeholder="Repayment Tenure">
+          <div *ngIf="repaymentTenure.touched && repaymentTenure.invalid" class="text-danger">
+            <span *ngIf="repaymentTenure.errors['required']">*Repayment Tenure is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="eligibility">Eligibility<span class="text-danger">*</span></label>
+          <input type="text" formControlName="eligibility" name="eligibility" id="eligibility" class="form-control" placeholder="Eligibility">
+          <div *ngIf="eligibility.touched && eligibility.invalid" class="text-danger">
+            <span *ngIf="eligibility.errors['required']">*Eligibility is required</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="documentsRequired">Documents Required<span class="text-danger">*</span></label>
+          <input type="text" formControlName="documentsRequired" name="documentsRequired" id="documentsRequired" class="form-control" placeholder="Documents Required">
+          <div *ngIf="documentsRequired.touched && documentsRequired.invalid" class="text-danger">
+            <span *ngIf="documentsRequired.errors['required']">*Documents Required is required</span>
+          </div>
+          <div *ngIf="failure" >
+            <p class="text-danger">This loan type already exists. Please choose a different loan type.</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-2" [disabled]="loanForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+  <div *ngIf="success" class="modal-overlay">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Success</h5>
+        </div>
+        <div class="modal-body">
+            <p>Successfully Added!</p>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary" (click)="ok()">OK</button>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,66 @@
+
+    <div class="mt-4 bodycontainer">
+        <h1 class="text-center">Available Educational Loan</h1>
+        <hr>
+        <div class="row mb-3 justify-content-center">
+            <div class="col-8">
+                <div class="filtering">
+                    <label for="searchData"></label>
+                    <input type="text" id="searchData" class="form-control form-control-sm search-input" [(ngModel)]="searchData" name="searchData" (input)="filterByLoans()" placeholder="Search Loan">
+                </div>
+            </div>
+        </div>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Loan Type</th>
+                        <th>Loan Description</th>
+                        <th>Interest Rate</th>
+                        <th>Maximum Amount</th>
+                        <th>Repayment Tenure</th>
+                        <th>Eligibility</th>
+                        <th>Documents Required</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let loan of loans; index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{loan.loanType}}</td>
+                        <td>{{loan.description}}</td>
+                        <td>{{loan.interestRate}}</td>
+                        <td>{{loan.maximumAmount}}</td>
+                        <td>{{loan.repaymentTenure}}</td>
+                        <td>{{loan.eligibility}}</td>
+                        <td>{{loan.documentsRequired}}</td>
+                        <td>
+                            <button class="btn {{ isAppliedLoan(loan) ? 'btn-secondary' : 'btn-primary' }}" (click)="onApply(loan.loanId)" [disabled]="isAppliedLoan(loan)">
+                                {{ isAppliedLoan(loan) ? 'Applied' : 'Apply' }}
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div *ngIf="loans.length == 0" class="oops text-center">
+                Oops, no loan found!
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

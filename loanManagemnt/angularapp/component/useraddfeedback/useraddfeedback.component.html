@@ -1,0 +1,24 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Feedback</title>
+</head>
+<body>
+    <div class="backgroundd">
+        <div class="container">
+            <h1>Add Feedback</h1>
+            <form [formGroup]="feedBackForm" (ngSubmit)="addFeedback()">
+                <div class="form-group">
+                    <label for="feedbackText">Feedback<span style="color: red;">*</span></label>
+                    <textarea formControlName="feedbackText" name="feedbackText" id="feedbackText" cols="5" rows="5"></textarea>
+                    <div *ngIf="feedbackText.touched && feedbackText.invalid" class="error-message">
+                        <span *ngIf="feedbackText.errors['required']">*Feedback is required</span>
+                    </div>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

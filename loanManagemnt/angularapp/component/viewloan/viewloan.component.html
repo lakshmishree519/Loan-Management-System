@@ -1,0 +1,41 @@
+
+        
+<div class=" bodycontainer shadow-container">
+    <h1 class="text-center">Edu Loans</h1>
+    <hr>
+
+    <div class="row mb-3 justify-content-center">
+        <div class="col-md-6">
+            <div class="filtering text-center">
+                <label for="searchData" class="form-label fw-bold text-white">Search Loan</label>
+                <input type="text" id="searchData" class="form-control form-control-sm search-input" [(ngModel)]="searchData" name="searchData" (input)="filterByLoans()" placeholder="Type here...">
+            </div>
+        </div>
+    </div>
+
+    <div class="row loan-cards-container">
+        <div class="col-md-4" *ngFor="let loan of loans">
+            <div class="loan-card">
+                <div class="loan-card-header">
+                    <h3 class="loan-title">{{loan.loanType}}</h3>
+                </div>
+                <div class="loan-card-body">
+                    <p><strong>Maximum Amount:</strong> {{loan.maximumAmount}}</p>
+                    <p><strong>Interest Rate:</strong> {{loan.interestRate}}</p>
+                    <p><strong>Repayment Tenure:</strong> {{loan.repaymentTenure}}</p>
+                    <p><strong>Eligibility:</strong> {{loan.eligibility}}</p>
+                    <p><strong>Documents Required:</strong> {{loan.documentsRequired}}</p>
+                    <p><strong>Description:</strong> {{loan.description}}</p>
+                </div>
+                <div class="button-group">
+                    <button class="btn1 btn" (click)="onEdit(loan.loanId)">Edit</button>
+                    <button class="btn2 btn" (click)="onDelete(loan.loanId)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div *ngIf="loans.length == 0" class="oops text-center">
+        Oops, no loan found!
+    </div>
+</div>

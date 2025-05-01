@@ -1,0 +1,66 @@
+<div class="backgroundd">
+    <div class="container">
+      <div class="register-container">
+        <div class="header">
+          <h2 class="text-center">Edit Loan</h2>
+          <button class="back-button" (click)="Back()">Back</button>
+        </div>
+        <hr class="text-primary color-blue">
+        <form [formGroup]="editForm" (ngSubmit)="updateForm()">
+          <div class="form-group">
+            <label for="loanType">Loan Type<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="loanType" id="loanType" formControlName="loanType">
+            <div *ngIf="loanType.touched && loanType.invalid">
+              <span *ngIf="loanType.errors['required']" class="text-danger">The Loan Type is required</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Description<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="description" id="description" formControlName="description">
+            <div *ngIf="description.touched && description.invalid">
+              <span *ngIf="description.errors['required']" class="text-danger">The Loan Description is required</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="interestRate">Interest Rate<span class="text-danger">*</span></label>
+            <input type="number" class="form-control" name="interestRate" id="interestRate" formControlName="interestRate">
+            <div *ngIf="interestRate.touched && interestRate.invalid">
+              <span *ngIf="interestRate.errors['required']" class="text-danger">The Loan Interest Rate is required</span>
+              <span *ngIf="interestRate.errors['min']" class="text-danger">The Interest Rate should not be less than 0</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="maximumAmount">Maximum Amount<span class="text-danger">*</span></label>
+            <input type="number" class="form-control" name="maximumAmount" id="maximumAmount" formControlName="maximumAmount">
+            <div *ngIf="maximumAmount.touched && maximumAmount.invalid">
+              <span *ngIf="maximumAmount.errors['required']" class="text-danger">The Maximum Amount is required</span>
+              <span *ngIf="maximumAmount.errors['min']" class="text-danger">The Maximum Amount should not be less than 0</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="repaymentTenure">Repayment Tenure<span class="text-danger">*</span></label>
+            <input type="number" class="form-control" name="repaymentTenure" id="repaymentTenure" formControlName="repaymentTenure">
+            <div *ngIf="repaymentTenure.touched && repaymentTenure.invalid">
+              <span *ngIf="repaymentTenure.errors['required']" class="text-danger">The Repayment Tenure is required</span>
+              <span *ngIf="repaymentTenure.errors['min']" class="text-danger">The Repayment Tenure should not be less than 0</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="eligibility">Eligibility<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="eligibility" id="eligibility" formControlName="eligibility">
+            <div *ngIf="eligibility.touched && eligibility.invalid">
+              <span *ngIf="eligibility.errors['required']" class="text-danger">The Eligibility is required</span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="documentsRequired">Documents Required<span class="text-danger">*</span></label>
+            <input type="text" class="form-control" name="documentsRequired" id="documentsRequired" formControlName="documentsRequired">
+            <div *ngIf="documentsRequired.touched && documentsRequired.invalid">
+              <span *ngIf="documentsRequired.errors['required']" class="text-danger">The Documents Required is required</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="editForm.invalid">Update Loan</button>
+        </form>
+      </div>
+    </div>
+  </div>

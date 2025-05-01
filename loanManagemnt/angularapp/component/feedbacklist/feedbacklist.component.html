@@ -1,0 +1,37 @@
+<div class="bodycontainer">
+<div class="container mt-5">
+    <h1 class="text-center" style="color: #5161CE;">Approved Loans</h1>
+    <hr style="color:#5161CE">
+</div>
+<div class="filtering">
+    <input type="text" [(ngModel)]="searchData" name="searchData" (input)="filterApprovedLoans()" placeholder="Search Feedback" >
+</div>
+  
+        <table class="table table-striped" >
+            <thead>
+                <tr class="table-primary">
+                    <th>S.No</th>
+                    <th>Loan Name</th>
+                    <th>Submission Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let approvedLoan of approvedLoans; index as i">
+                    <td>{{i+1}}</td>
+                    <td>{{approvedLoan.loan.loanType}}</td>
+                    <td>{{approvedLoan.submissionDate}}</td>
+                    <td></td>
+                    <td>
+                        <button class="btn btn-custom" (click)="giveFeedback(approvedLoan.loanApplicationId)" [disabled]="approvedLoan.hasFeedback===1">Feedback</button>&nbsp;&nbsp;
+                        <button class="btn btn-custom" (click)="viewFeedback(approvedLoan.loanApplicationId)" [disabled]="approvedLoan.hasFeedback===0">View Feedback</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       
+        <div *ngIf="approvedLoans.length == 0" class="oops">
+            Oops, no record
+        </div>
+  
+ 
